@@ -1,0 +1,21 @@
+.gun-container{
+  width: 290px;
+  height: 500px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  padding: 1rem;
+  border-radius: 10px;
+}
+.gun-container img{
+  width: 280px;
+  height: 280px;
+  padding: 1rem;
+  border-radius: 10px;
+}
+.gun-container p{
+  margin: 0;
+}
+.btn-style{
+  left: 0;bottom: 0;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}

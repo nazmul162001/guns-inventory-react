@@ -1,0 +1,6 @@
+.guns-container{
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  grid-gap: 2rem;
+  padding: 3rem 1rem 0 3rem;
+}
