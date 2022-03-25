@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react';
+import Cart from '../Cart/Cart';
 import Gun from '../Gun/Gun';
 import './Shop.css';
 
 const Shop = () => {
   const [guns, setGuns] = useState([]);
-  const [cart, setCart] = useState([]);
-  console.log(cart);
+  const [details, setDetails] = useState([])
+  // console.log(details);
 
 
   useEffect(() => {
@@ -14,12 +15,9 @@ const Shop = () => {
     .then(data => setGuns(data))
   },[])
 
-  // handle Click 
-  const handleClick = (gun) => {
-    const newCart = [...cart, gun];
-    setCart(newCart);
-  }
 
+  const handleClick = gun => setDetails([...details, gun]);
+  
   return (
     <div className='shop-container row'>
       <div className="col-lg-9">
@@ -34,10 +32,14 @@ const Shop = () => {
           }
         </div>
       </div>
-      <div className="col-lg-3">
-        <h3>Total Guns: {guns.length}</h3>
-        <h4>Order Summery: {cart.length}</h4>
-        <p>Name: {cart.name}</p>
+      <div className="col-lg-3 ">
+          <div className="right-content">
+            <Cart 
+            details = {details} 
+            guns = {guns}
+            setDetails = {setDetails}
+            />
+          </div>
       </div>
     </div>
   );

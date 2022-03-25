@@ -4,3 +4,7 @@
   grid-gap: 2rem;
   padding: 3rem 1rem 0 3rem;
 }
+.right-content{
+  position: sticky;
+  top: 0;
+}
