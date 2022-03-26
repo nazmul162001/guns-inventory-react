@@ -6,7 +6,6 @@ import './Shop.css';
 const Shop = () => {
   const [guns, setGuns] = useState([]);
   const [details, setDetails] = useState([])
-  // console.log(details);
 
 
   useEffect(() => {
@@ -15,8 +14,15 @@ const Shop = () => {
     .then(data => setGuns(data))
   },[])
 
-
-  const handleClick = gun => setDetails([...details, gun]);
+  // handle click 
+  const handleClick = gun => {
+    if(details.find(item => item.id === gun.id)){
+      alert('Already Exists')
+    }
+    else{
+      setDetails([...details, gun]);
+    }
+  } 
   
   return (
     <div className='shop-container row'>
